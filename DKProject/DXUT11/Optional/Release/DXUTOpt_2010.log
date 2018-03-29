@@ -1,0 +1,38 @@
+﻿빌드 시작: 2011-02-20 오후 10:27:19
+     1>2 노드의 "G:\Project\DKProject\DXUT11\Optional\DXUTOpt_2010.vcxproj" 프로젝트(build 대상)입니다.
+     1>PrepareForBuild:
+         "G:\Project\DKProject\Release\" 디렉터리를 만들고 있습니다.
+       InitializeBuildStatus:
+         "AlwaysCreate"이(가) 지정되었기 때문에 "Release\DXUTOpt.unsuccessfulbuild"을(를) 만들고 있습니다.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\Core\ /I..\..\\Core /I..\..\\Optional /Zi /nologo /W4 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _LIB /D D3DXFX_LARGEADDRESS_HANDLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /openmp- /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt DXUTcamera.cpp DXUTgui.cpp DXUTguiIME.cpp DXUTres.cpp DXUTsettingsdlg.cpp ImeUi.cpp SDKmesh.cpp SDKmisc.cpp SDKsound.cpp SDKwavefile.cpp  
+         DXUTcamera.cpp
+         DXUTgui.cpp
+         DXUTguiIME.cpp
+         DXUTres.cpp
+         DXUTsettingsdlg.cpp
+         ImeUi.cpp
+         SDKmesh.cpp
+         SDKmisc.cpp
+         SDKsound.cpp
+         SDKwavefile.cpp
+       Lib:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"G:\Project\DKProject\Release\DXUTOpt.lib" /NOLOGO /LTCG Release\DXUTcamera.obj
+         Release\DXUTgui.obj
+         Release\DXUTguiIME.obj
+         Release\DXUTres.obj
+         Release\DXUTsettingsdlg.obj
+         Release\ImeUi.obj
+         Release\SDKmesh.obj
+         Release\SDKmisc.obj
+         Release\SDKsound.obj
+         Release\SDKwavefile.obj
+         DXUTOpt_2010.vcxproj -> G:\Project\DKProject\Release\DXUTOpt.lib
+       FinalizeBuildStatus:
+         "Release\DXUTOpt.unsuccessfulbuild" 파일을 삭제하고 있습니다.
+         "Release\DXUTOpt.lastbuildstate"에 연결(touching)하고 있습니다.
+     1>"G:\Project\DKProject\DXUT11\Optional\DXUTOpt_2010.vcxproj" 프로젝트를 빌드했습니다(build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:11.97

@@ -1,0 +1,24 @@
+﻿빌드 시작: 2011-02-20 오후 10:27:19
+     1>3 노드의 "G:\Project\DKProject\DXUT11\Core\DXUT_2010.vcxproj" 프로젝트(build 대상)입니다.
+     1>InitializeBuildStatus:
+         "AlwaysCreate"이(가) 지정되었기 때문에 "Release\DXUT.unsuccessfulbuild"을(를) 만들고 있습니다.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\\Core /I..\..\\Optional /Zi /nologo /W4 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _LIB /D D3DXFX_LARGEADDRESS_HANDLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /openmp- /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt DXUT.cpp DXUTDevice11.cpp DXUTDevice9.cpp DXUTmisc.cpp  
+         DXUT.cpp
+         DXUTDevice11.cpp
+         DXUTDevice9.cpp
+         DXUTmisc.cpp
+       Lib:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"G:\Project\DKProject\Release\DXUT.lib" /NOLOGO /LTCG Release\DXUT.obj
+         Release\DXUTDevice11.obj
+         Release\DXUTDevice9.obj
+         Release\DXUTmisc.obj
+         DXUT_2010.vcxproj -> G:\Project\DKProject\Release\DXUT.lib
+       FinalizeBuildStatus:
+         "Release\DXUT.unsuccessfulbuild" 파일을 삭제하고 있습니다.
+         "Release\DXUT.lastbuildstate"에 연결(touching)하고 있습니다.
+     1>"G:\Project\DKProject\DXUT11\Core\DXUT_2010.vcxproj" 프로젝트를 빌드했습니다(build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:11.35
