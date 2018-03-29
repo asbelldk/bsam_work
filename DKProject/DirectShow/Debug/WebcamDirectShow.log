@@ -1,0 +1,8 @@
+﻿  stdafx.cpp
+  Win2Dlg.cpp
+  DlgWebcam.cpp
+  WebcamDirectShow.cpp
+  CaptureGraph.cpp
+  코드를 생성하고 있습니다...
+CaptureGraph.obj : warning LNK4075: '/EDITANDCONTINUE'이(가) '/SAFESEH' 사양으로 인해 무시됩니다.
+  WebcamDirectShow.vcxproj -> D:\Work\bsam_work\DKProject\Debug\WebcamDirectShow.exe
