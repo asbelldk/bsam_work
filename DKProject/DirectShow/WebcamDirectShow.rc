@@ -16,7 +16,110 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Deutsch (Deutschland) resources
+// 한국어(대한민국) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WEBCAM_DIRECTSHOW_DIALOG DIALOGEX 440, 30, 448, 349
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "WebCam Window"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIST_DEVICES,7,299,257,43,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "select source",IDC_BUT_SELECT_SOURCE,277,314,99,14
+END
+
+IDD_WIN2 DIALOGEX 65116, 65518, 414, 374
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "WebCam Capture Window"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "save bitmap to file (test.bmp)",IDC_BUT_SAVE_BMP,274,309,137,18
+    PUSHBUTTON      "take a picture",IDC_BUT_TAKE_PICTURE,1,309,137,18
+    CONTROL         "grayed",IDC_CHECK_GRAY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,338,39,10
+    PUSHBUTTON      "left/right",IDC_BUT_LEFT_RIGHT,1,358,66,14
+END
+
+IDD_HISTOGRAM DIALOGEX 0, 0, 342, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Histogram"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "expand image",IDC_BUT_EXPAND,260,162,75,14
+END
+
+IDD_MAIN_DIALOG DIALOGEX 0, 0, 589, 303
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Main Window"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_WEBCAM_DIRECTSHOW_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 441
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 342
+    END
+
+    IDD_WIN2, DIALOG
+    BEGIN
+    END
+
+    IDD_HISTOGRAM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 335
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_MAIN_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 582
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 296
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_MAIN_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // 한국어(대한민국) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 독일어(독일) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
 LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
@@ -70,41 +173,6 @@ END
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "res\\WebcamDirectShow.ico"
 
-/////////////////////////////////////////////////////////////////////////////
-//
-// Dialog
-//
-
-IDD_WEBCAM_DIRECTSHOW_DIALOG DIALOGEX 440, 30, 448, 349
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-EXSTYLE WS_EX_APPWINDOW
-CAPTION "Test WebcamDirectShow Orgler-Italy"
-FONT 8, "MS Shell Dlg", 0, 0, 0x1
-BEGIN
-    LISTBOX         IDC_LIST_DEVICES,7,299,257,43,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
-    PUSHBUTTON      "select source",IDC_BUT_SELECT_SOURCE,277,314,99,14
-END
-
-IDD_WIN2 DIALOGEX 65116, 65518, 414, 374
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-EXSTYLE WS_EX_APPWINDOW
-CAPTION "CAM-WIN2"
-FONT 8, "MS Shell Dlg", 0, 0, 0x1
-BEGIN
-    PUSHBUTTON      "save bitmap to file (test.bmp)",IDC_BUT_SAVE_BMP,274,309,137,18
-    PUSHBUTTON      "take a picture",IDC_BUT_TAKE_PICTURE,1,309,137,18
-    CONTROL         "grayed",IDC_CHECK_GRAY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,338,39,10
-    PUSHBUTTON      "left/right",IDC_BUT_LEFT_RIGHT,1,358,66,14
-END
-
-IDD_HISTOGRAM DIALOGEX 0, 0, 342, 183
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Histogram"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
-BEGIN
-    PUSHBUTTON      "expand image",IDC_BUT_EXPAND,260,162,75,14
-END
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -144,38 +212,7 @@ BEGIN
     END
 END
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// DESIGNINFO
-//
-
-#ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO
-BEGIN
-    IDD_WEBCAM_DIRECTSHOW_DIALOG, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 441
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 342
-    END
-
-    IDD_WIN2, DIALOG
-    BEGIN
-    END
-
-    IDD_HISTOGRAM, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 335
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 176
-    END
-END
-#endif    // APSTUDIO_INVOKED
-
-#endif    // Deutsch (Deutschland) resources
+#endif    // 독일어(독일) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

@@ -13,7 +13,7 @@ public:
 //
 	enum { IDD = IDD_WIN2 };
 
-HRESULT BitmapSaveToFile(char *pFileName, BITMAPINFO *pBMI, size_t cbBMI, BYTE *pData, size_t cbData);
+	HRESULT BitmapSaveToFile(char *pFileName, BITMAPINFO *pBMI, size_t cbBMI, BYTE *pData, size_t cbData);
 
 
 protected:

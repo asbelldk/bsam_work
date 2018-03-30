@@ -1,11 +1,12 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by WebcamDirectShow.rc
+// Microsoft Visual C++에서 생성한 포함 파일입니다.
+// WebcamDirectShow.rc에서 사용되고 있습니다.
 //
 #define IDD_WEBCAM_DIRECTSHOW_DIALOG    102
 #define IDR_MAINFRAME                   128
 #define IDD_WIN2                        129
 #define IDD_HISTOGRAM                   130
+#define IDD_MAIN_DIALOG                 131
 #define IDC_BUT_SELECT_SOURCE           1000
 #define IDC_LIST_DEVICES                1001
 #define IDC_BUT_GRAB_IMAGE              1002
@@ -50,7 +51,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        131
+#define _APS_NEXT_RESOURCE_VALUE        135
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1046
 #define _APS_NEXT_SYMED_VALUE           101

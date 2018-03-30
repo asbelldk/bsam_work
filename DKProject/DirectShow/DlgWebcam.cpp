@@ -7,6 +7,7 @@
 
 #include "CaptureGraph.h"
 #include "Win2Dlg.h"
+#include "MainDlg.h"
 
 #pragma comment(lib, "strmiids")
 
@@ -44,6 +45,7 @@ CBitmap capture_map;
 int iBitmapFlag=0;
 
 CWin2Dlg  dlgWin2;   // like a pointer to CWin2Dlg class
+CMainDlg  dlgMain;
 extern CRect RectWin2;
 //=====================================================
 
@@ -193,6 +195,8 @@ BOOL CWebcamDirectShowDlg::OnInitDialog()
 	dlgWin2.Create(IDD_WIN2,this);
 	dlgWin2.ShowWindow(SW_SHOW);
 	//========================================================
+	dlgMain.Create(IDD_MAIN_DIALOG, this);
+	dlgMain.ShowWindow(SW_SHOW);
 
 	IMonRelease(pmVideo);
 
@@ -282,7 +286,7 @@ BOOL InitCapFilters()
      goto INIT_FILTERS_FAIL;
     }
   
-    if(gcap.pFg)     return TRUE;
+    if(gcap.pFg) return TRUE;
 
     hr = CoCreateInstance(CLSID_FilterGraph, NULL, CLSCTX_INPROC,IID_IGraphBuilder, (LPVOID *)&gcap.pFg);
 

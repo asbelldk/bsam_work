@@ -27,7 +27,7 @@ extern struct  _capstuff
 	BOOL fUseFrameRate;
     BOOL fPreviewFaked;     
     int iNumVCapDevices;    // number of devices 
-};	
+}gcap;
 	
 extern CString strInfo[10];   // Infos into our Listbox
 extern int iIndex;
@@ -92,7 +92,7 @@ int EnumerateAllDevices()
     HRESULT hr;
    
      for(int i = 0; i < NUMELMS(gcap.rgpmVideoMenu); i++)
-						IMonRelease(gcap.rgpmVideoMenu[i]);
+		 IMonRelease(gcap.rgpmVideoMenu[i]);
     
 	hr = CoInitializeEx(NULL, COINIT_MULTITHREADED);
 

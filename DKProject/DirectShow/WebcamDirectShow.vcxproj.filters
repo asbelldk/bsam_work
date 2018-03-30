@@ -30,6 +30,9 @@
     <ClCompile Include="Win2Dlg.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="MainDlg.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WebcamDirectShow.h">
@@ -51,6 +54,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Win2Dlg.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MainDlg.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
