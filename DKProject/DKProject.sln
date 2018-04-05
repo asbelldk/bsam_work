@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DX11Sample", "DX11Sample\DX11Sample.vcxproj", "{ADF28864-9BD9-4953-9497-BE7FF793D82C}"
 EndProject
@@ -18,6 +18,11 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tool3", "Tool3\Tool3.vcxproj", "{56EF30E4-ED65-412F-9882-2E82B5F7C346}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WebcamDirectShow", "DirectShow\WebcamDirectShow.vcxproj", "{1899984A-B106-4FFE-8CC8-F418511EAA7B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DentalTechnologistAssist", "DentalTechnologistAssist\DentalTechnologistAssist.vcxproj", "{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}"
+	ProjectSection(ProjectDependencies) = postProject
+		{85344B7F-5AA0-4E12-A065-D1333D11F6CA} = {85344B7F-5AA0-4E12-A065-D1333D11F6CA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -163,6 +168,22 @@ Global
 		{1899984A-B106-4FFE-8CC8-F418511EAA7B}.Template|Win32.ActiveCfg = Template|Win32
 		{1899984A-B106-4FFE-8CC8-F418511EAA7B}.Template|Win32.Build.0 = Template|Win32
 		{1899984A-B106-4FFE-8CC8-F418511EAA7B}.Template|x64.ActiveCfg = Template|Win32
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Debug|Win32.Build.0 = Debug|Win32
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Debug|x64.ActiveCfg = Debug|x64
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Debug|x64.Build.0 = Debug|x64
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Profile|Win32.ActiveCfg = Release|Win32
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Profile|Win32.Build.0 = Release|Win32
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Profile|x64.ActiveCfg = Release|x64
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Profile|x64.Build.0 = Release|x64
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Release|Win32.ActiveCfg = Release|Win32
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Release|Win32.Build.0 = Release|Win32
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Release|x64.ActiveCfg = Release|x64
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Release|x64.Build.0 = Release|x64
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Template|Win32.ActiveCfg = Release|Win32
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Template|Win32.Build.0 = Release|Win32
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Template|x64.ActiveCfg = Release|x64
+		{FAF0DCA2-3310-4C47-BB9C-4D4883D9B913}.Template|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
