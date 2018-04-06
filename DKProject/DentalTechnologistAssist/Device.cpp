@@ -162,6 +162,7 @@ HRESULT DrawDevice::CreateDevice(HWND hwnd)
 	if (m_pD3D == NULL)
 	{
 		m_pD3D = Direct3DCreate9(D3D_SDK_VERSION);
+		//m_pD3D = DXUT_Dynamic_Direct3DCreate9(D3D_SDK_VERSION)
 
 		if (m_pD3D == NULL)
 		{
@@ -906,7 +907,7 @@ void TransformImage_NV12(
 //
 //-------------------------------------------------------------------
 
-RECT    LetterBoxRect(const RECT& rcSrc, const RECT& rcDst)
+RECT LetterBoxRect(const RECT& rcSrc, const RECT& rcDst)
 {
 	// figure out src/dest scale ratios
 	int iSrcWidth = Width(rcSrc);

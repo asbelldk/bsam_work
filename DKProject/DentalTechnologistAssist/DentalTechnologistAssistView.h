@@ -39,6 +39,9 @@ protected:
 
 // 생성된 메시지 맵 함수
 protected:
+	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+	afx_msg void OnClose();
+	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnFilePrintPreview();
 	afx_msg void OnRButtonUp(UINT nFlags, CPoint point);
 	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);

@@ -64,6 +64,24 @@ template <class T> void SafeRelease(T **ppT)
 #define BREAK_ON_FAIL(value)            if(FAILED(value)) break;
 #define BREAK_ON_NULL(value, newHr)     if(value == NULL) { hr = newHr; break; }
 
+#pragma comment(lib,"mfplat.lib")
+#pragma message("linking with Microsoft's Media Foundation mfplat library ...")  
+#pragma comment(lib,"mf.lib")  
+#pragma message("linking with Microsoft's Media Foundation mf library ...")  
+#pragma comment(lib,"mfreadwrite.lib")  
+#pragma message("linking with Microsoft's Media Foundation mfreadwrite library ...")
+#pragma comment(lib,"mfuuid.lib")
+#pragma message("linking with Microsoft's Media Foundation mfuuid library ...")
+#pragma comment(lib,"d3d9.lib")  
+#pragma message("linking with Microsoft's DirectX 3D 9 library ...")
+#pragma comment(lib,"shlwapi.lib")
+#pragma message("linking with Microsoft's shlwapi library ...")
+#pragma comment(lib,"D3dx9.lib")
+#pragma message("linking with Microsoft's DirectX 3DX 9 library ...")
+#pragma comment(lib,"Advapi32.lib")
+#pragma message("linking with Microsoft's Advapi32 library ...") 
+
+
 //#include "resource.h"
 #include "Device.h"
 #include "Preview.h"

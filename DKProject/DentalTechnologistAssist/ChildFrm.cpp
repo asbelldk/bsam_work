@@ -11,8 +11,10 @@
 #define new DEBUG_NEW
 #endif
 
-// CChildFrame
 
+////////////////////////////////////////////////////////////////////////////////////////
+
+// CChildFrame
 IMPLEMENT_DYNCREATE(CChildFrame, CMDIChildWndEx)
 
 BEGIN_MESSAGE_MAP(CChildFrame, CMDIChildWndEx)

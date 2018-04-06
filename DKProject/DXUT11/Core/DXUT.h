@@ -301,7 +301,7 @@ bool                     WINAPI DXUTIsAppRenderingWithD3D9();
 
 
 // Direct3D 11
-IDXGIFactory1*            WINAPI DXUTGetDXGIFactory(); // Does not addref unlike typical Get* APIs
+IDXGIFactory1*           WINAPI DXUTGetDXGIFactory(); // Does not addref unlike typical Get* APIs
 IDXGISwapChain*          WINAPI DXUTGetDXGISwapChain(); // Does not addref unlike typical Get* APIs
 const DXGI_SURFACE_DESC* WINAPI DXUTGetDXGIBackBufferSurfaceDesc();
 bool                     WINAPI DXUTIsD3D11Available(); // If D3D11 APIs are availible

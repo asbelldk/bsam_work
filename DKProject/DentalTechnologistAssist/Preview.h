@@ -62,8 +62,6 @@ protected:
 
 	IMFSourceReader         *m_pReader;
 
-
-
 	WCHAR                   *m_pwszSymbolicLink;
 	UINT32                  m_cchSymbolicLink;
 };
