@@ -190,6 +190,7 @@ BEGIN_MESSAGE_MAP(CDentalTechnologistAssistView, CView)
 	ON_WM_CREATE()
 	ON_WM_CLOSE()
 	ON_WM_SIZE()
+	//ON_WM_DRAW()
 END_MESSAGE_MAP()
 
 // CDentalTechnologistAssistView 생성/소멸
@@ -244,14 +245,14 @@ void CDentalTechnologistAssistView::OnSize(UINT nType, int cx, int cy)
 {
 	//CDentalTechnologistAssistView::OnSize(nType, cx, cy);
 
-	CWnd *pWnd = AfxGetMainWnd();
+	/*CWnd *pWnd = AfxGetMainWnd();
 	HWND hWnd = pWnd->m_hWnd;
 
 	if(mf_Preview)
 	{
 	    mf_Preview->ResizeVideo((WORD)cx, (WORD)cy);
 		InvalidateRect(NULL, FALSE);
-	}
+	}*/
 }
 
 CDentalTechnologistAssistView::CDentalTechnologistAssistView()
@@ -274,12 +275,24 @@ BOOL CDentalTechnologistAssistView::PreCreateWindow(CREATESTRUCT& cs)
 
 // CDentalTechnologistAssistView 그리기
 
-void CDentalTechnologistAssistView::OnDraw(CDC* /*pDC*/)
+void CDentalTechnologistAssistView::OnDraw(CDC* pDC)
 {
+	if(pDC == NULL) return;
+
+	CString strText = _T("TODO: implement thumbnail drawing here");
+	//pDC->FillSolidRect(lprcBounds, RGB(255, 255, 255));
+	CRect rectClient;
+	GetClientRect(rectClient);
+	
+	pDC->DrawText(strText, rectClient, DT_CENTER | DT_WORDBREAK);
+
+	mf_Preview->m_draw.TestDraw();
+	//mf_Preview->OnReadSample()
+	//pDC->DrawText("dsadaeea", 8, &a, RGB(255, 0, 0));
 	//CDentalTechnologistAssistDoc* pDoc = GetDocument();
 	///ASSERT_VALID(pDoc);
 	//if (!pDoc)
-		return;
+	//	return;
 
 	// TODO: 여기에 원시 데이터에 대한 그리기 코드를 추가합니다.
 }

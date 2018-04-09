@@ -62,4 +62,7 @@ public:
 	// What video formats we accept
 	BOOL     IsFormatSupported(REFGUID subtype) const;
 	HRESULT  GetFormat(DWORD index, GUID *pSubtype)  const;
+
+	// test code
+	void TestDraw();
 };

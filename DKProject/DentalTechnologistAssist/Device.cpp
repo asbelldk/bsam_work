@@ -1028,3 +1028,18 @@ HRESULT GetDefaultStride(IMFMediaType *pType, LONG *plStride)
 	}
 	return hr;
 }
+
+// test draw
+void DrawDevice::TestDraw()
+{
+	m_pDevice->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER,
+		D3DCOLOR_COLORVALUE(0.0f, 1.0f, 0.0f, 1.0f), 1.0f, 0);
+
+	m_pDevice->BeginScene();
+
+	// Render geometry here...
+
+	m_pDevice->EndScene();
+
+	m_pDevice->Present(NULL, NULL, NULL, NULL);
+}
