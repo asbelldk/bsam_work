@@ -155,6 +155,14 @@ int CDentalTechnologistAssistApp::ExitInstance()
 	return CWinAppEx::ExitInstance();
 }
 
+BOOL CDentalTechnologistAssistApp::OnIdle(LONG lCount)
+{
+	CWinApp::OnIdle(lCount);
+	//static_cast< CMainFrame * >(m_pMainWnd)->m_wndView.RenderDirect3D();
+	
+	return TRUE;
+}
+
 // CDentalTechnologistAssistApp 메시지 처리기
 
 

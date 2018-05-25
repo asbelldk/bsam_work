@@ -21,46 +21,46 @@
 
 ///*  Make the window name into a global variable  */
 TCHAR szWindowName[] = L"Snoopy's WMF Webcam Capture.";
-
-// Global variables  
-CPreview    *mf_Preview = NULL;
+//
+//// Global variables  
+////CPreview    *mf_Preview = NULL;
 HDEVNOTIFY  g_hdevnotify = NULL;
+//
+//struct ChooseDeviceParam
+//{
+//    IMFActivate **ppDevices;    // Array of IMFActivate pointers.  
+//    UINT32      count;          // Number of elements in the array.  
+//    UINT32      selection;      // Selected device, by array index.  
+//};
+//
+//BOOL InitializeApplication()
+//{
+//	HRESULT hr = S_OK;
+//	hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+//	if (SUCCEEDED(hr))
+//	{
+//	    hr = MFStartup(MF_VERSION);
+//	}	
+//	
+//	return (SUCCEEDED(hr));
+//}
 
-struct ChooseDeviceParam
-{
-    IMFActivate **ppDevices;    // Array of IMFActivate pointers.  
-    UINT32      count;          // Number of elements in the array.  
-    UINT32      selection;      // Selected device, by array index.  
-};
-
-BOOL InitializeApplication()
-{
-	HRESULT hr = S_OK;
-	hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
-	if (SUCCEEDED(hr))
-	{
-	    hr = MFStartup(MF_VERSION);
-	}	
-	
-	return (SUCCEEDED(hr));
-}
-
-void CleanUp()
-{
-	if (g_hdevnotify)
-	{
-		UnregisterDeviceNotification(g_hdevnotify);
-	}
-
-	if (mf_Preview)
-	{
-		mf_Preview->CloseDevice();
-	}
-
-	SafeRelease(&mf_Preview);
-	MFShutdown();
-	CoUninitialize();
-}
+//void CleanUp()
+//{
+//	if (g_hdevnotify)
+//	{
+//		UnregisterDeviceNotification(g_hdevnotify);
+//	}
+//
+//	if (mf_Preview)
+//	{
+//		mf_Preview->CloseDevice();
+//	}
+//
+//	SafeRelease(&mf_Preview);
+//	MFShutdown();
+//	CoUninitialize();
+//}
 
 void ShowErrorMessage(PCWSTR format, HRESULT hrErr)
 {
@@ -77,102 +77,102 @@ void ShowErrorMessage(PCWSTR format, HRESULT hrErr)
     }
 }
 
-void OnChooseDevice(HWND hwnd, bool bPrompt)
-{
-	HRESULT hr = S_OK;
-	ChooseDeviceParam param = { 0 };
-    UINT iDevice = 0;   // Index into the array of devices  
-	BOOL bCancel = FALSE;
-    IMFAttributes *pAttributes = NULL;
-
-    // Initialize an attribute store to specify enumeration parameters.
-    hr = MFCreateAttributes(&pAttributes, 1);
-    if (FAILED(hr)) { CleanUp(); }
-
-    // Ask for source type = video capture devices.  
-    hr = pAttributes->SetGUID(
-         MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE,
-         MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_GUID);
-    if (FAILED(hr)) { CleanUp(); }
-
-	// Enumerate devices.
-    hr = MFEnumDeviceSources(pAttributes, &param.ppDevices, &param.count);
-    if (FAILED(hr)) { CleanUp(); }
-
-    // NOTE: param.count might be zero.
- //   if (bPrompt)
- //   {
- //       // Ask the user to select a device.  
- //        INT_PTR result = DialogBoxParam(
- //            GetModuleHandle(NULL),
- //            MAKEINTRESOURCE(IDD_CHOOSE_DEVICE),
- //            hwnd,
- //            DlgProc,
- //            (LPARAM)& param);
-
-	//	if (result == IDOK)
-	//	{
-	//		iDevice = param.selection;
-	//	}
-	//	else
-	//	{
-	//		bCancel = true; // User cancelled  
-	//		PostQuitMessage(0);
-	//	}
-	//}
-
-    if (!bCancel && (param.count > 0))
-	//if(param.count > 0)
-    {
-        // Give this source to the CPlayer object for preview.
-		hr = mf_Preview->SetDevice(param.ppDevices[iDevice]);
-        if (FAILED(hr))
-        {
-			ShowErrorMessage(L"Cannot create a video capture device", hr);
-			SafeRelease(&pAttributes);
-
-	        for(DWORD i = 0; i < param.count; i++)
-				SafeRelease(&param.ppDevices[i]);
-
-			CoTaskMemFree(param.ppDevices);
-		}
-	}
-	else
-    {
-	    //CleanUp();
-        hr = -1;
-
-		return;
-    }
-
-	SetWindowPos(hwnd, HWND_TOP, 0, 0, mf_Preview->m_draw.m_width - 60, mf_Preview->m_draw.m_height, SWP_SHOWWINDOW);
-    SafeRelease(&pAttributes);
-
-    for(DWORD i = 0; i < param.count; i++)
-		SafeRelease(&param.ppDevices[i]);
-
-	CoTaskMemFree(param.ppDevices);
-
-    if(FAILED(hr))
-	    ShowErrorMessage(L"Cannot create a video capture device", hr);
-}
-
-void OnDeviceChange(HWND hwnd, DEV_BROADCAST_HDR *pHdr)
-{
-	if(mf_Preview == NULL || pHdr == NULL)
-	    return;
-
-    HRESULT hr = S_OK;
-	BOOL bDeviceLost = FALSE;
-
-    // Check if the current device was lost.
-    hr = mf_Preview->CheckDeviceLost(pHdr, &bDeviceLost);
-    if(FAILED(hr) || bDeviceLost)
-    {
-		mf_Preview->CloseDevice();
-		MessageBox(hwnd, L"Lost the capture device.", szWindowName, MB_OK);
-    }
-}
+//void OnChooseDevice(HWND hwnd, bool bPrompt)
+//{
+//	HRESULT hr = S_OK;
+//	ChooseDeviceParam param = { 0 };
+//    UINT iDevice = 0;   // Index into the array of devices  
+//	BOOL bCancel = FALSE;
+//    IMFAttributes *pAttributes = NULL;
+//
+//    // Initialize an attribute store to specify enumeration parameters.
+//    hr = MFCreateAttributes(&pAttributes, 1);
+//    if (FAILED(hr)) { CleanUp(); }
+//
+//    // Ask for source type = video capture devices.  
+//    hr = pAttributes->SetGUID(
+//         MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE,
+//         MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_GUID);
+//    if (FAILED(hr)) { CleanUp(); }
+//
+//	// Enumerate devices.
+//    hr = MFEnumDeviceSources(pAttributes, &param.ppDevices, &param.count);
+//    if (FAILED(hr)) { CleanUp(); }
+//
+//    // NOTE: param.count might be zero.
+// //   if (bPrompt)
+// //   {
+// //       // Ask the user to select a device.  
+// //        INT_PTR result = DialogBoxParam(
+// //            GetModuleHandle(NULL),
+// //            MAKEINTRESOURCE(IDD_CHOOSE_DEVICE),
+// //            hwnd,
+// //            DlgProc,
+// //            (LPARAM)& param);
+//
+//	//	if (result == IDOK)
+//	//	{
+//	//		iDevice = param.selection;
+//	//	}
+//	//	else
+//	//	{
+//	//		bCancel = true; // User cancelled  
+//	//		PostQuitMessage(0);
+//	//	}
+//	//}
+//
+//    if (!bCancel && (param.count > 0))
+//	//if(param.count > 0)
+//    {
+//        // Give this source to the CPlayer object for preview.
+//		hr = mf_Preview->SetDevice(param.ppDevices[iDevice]);
+//        if (FAILED(hr))
+//        {
+//			ShowErrorMessage(L"Cannot create a video capture device", hr);
+//			SafeRelease(&pAttributes);
+//
+//	        for(DWORD i = 0; i < param.count; i++)
+//				SafeRelease(&param.ppDevices[i]);
+//
+//			CoTaskMemFree(param.ppDevices);
+//		}
+//	}
+//	else
+//    {
+//	    //CleanUp();
+//        hr = -1;
+//
+//		return;
+//    }
+//
+//	SetWindowPos(hwnd, HWND_TOP, 0, 0, mf_Preview->m_draw.m_width - 60, mf_Preview->m_draw.m_height, SWP_SHOWWINDOW);
+//    SafeRelease(&pAttributes);
+//
+//    for(DWORD i = 0; i < param.count; i++)
+//		SafeRelease(&param.ppDevices[i]);
+//
+//	CoTaskMemFree(param.ppDevices);
+//
+//    if(FAILED(hr))
+//	    ShowErrorMessage(L"Cannot create a video capture device", hr);
+//}
+//
+//void OnDeviceChange(HWND hwnd, DEV_BROADCAST_HDR *pHdr)
+//{
+//	if(mf_Preview == NULL || pHdr == NULL)
+//	    return;
+//
+//    HRESULT hr = S_OK;
+//	BOOL bDeviceLost = FALSE;
+//
+//    // Check if the current device was lost.
+//    hr = mf_Preview->CheckDeviceLost(pHdr, &bDeviceLost);
+//    if(FAILED(hr) || bDeviceLost)
+//    {
+//		mf_Preview->CloseDevice();
+//		MessageBox(hwnd, L"Lost the capture device.", szWindowName, MB_OK);
+//    }
+//}
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -190,6 +190,7 @@ BEGIN_MESSAGE_MAP(CDentalTechnologistAssistView, CView)
 	ON_WM_CREATE()
 	ON_WM_CLOSE()
 	ON_WM_SIZE()
+	//ON_WM_PAINT()
 	//ON_WM_DRAW()
 END_MESSAGE_MAP()
 
@@ -217,20 +218,20 @@ int CDentalTechnologistAssistView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	    return -1;
 	}
     // Create the object that manages video preview.   
-    hr = CPreview::CreateInstance(hWnd, hWnd, &mf_Preview);
-    if (FAILED(hr))
-	{
-		ShowErrorMessage(L"CPreview::CreateInstance failed.", hr);
-        CleanUp();
+ //   hr = CPreview::CreateInstance(hWnd, hWnd, &mf_Preview);
+ //   if (FAILED(hr))
+	//{
+	//	ShowErrorMessage(L"CPreview::CreateInstance failed.", hr);
+ //       CleanUp();
 
-        return -1;
-    }
+ //       return -1;
+ //   }
 
-    // Select the first available device (if any).  
-    OnChooseDevice(hWnd, true);
+ //   // Select the first available device (if any).  
+ //   OnChooseDevice(hWnd, true);
 
 	//SetWindowPos(hWnd, HWND_TOP, 0, 0, mf_Preview->m_draw.width, mf_Preview->m_draw.height, NULL);
-	SetWindowPos(pWnd, 0, 0, mf_Preview->m_draw.width, mf_Preview->m_draw.height, NULL);
+	//SetWindowPos(pWnd, 0, 0, mf_Preview->m_draw.width, mf_Preview->m_draw.height, NULL);
 
 	return 0;
 }
@@ -238,7 +239,7 @@ int CDentalTechnologistAssistView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 void CDentalTechnologistAssistView::OnClose()
 {
 	//CDentalTechnologistAssistView::OnClose();
-	CleanUp();
+	//CleanUp();
 }
 
 void CDentalTechnologistAssistView::OnSize(UINT nType, int cx, int cy)
@@ -270,24 +271,51 @@ BOOL CDentalTechnologistAssistView::PreCreateWindow(CREATESTRUCT& cs)
 	// TODO: CREATESTRUCT cs를 수정하여 여기에서
 	//  Window 클래스 또는 스타일을 수정합니다.
 
-	return CView::PreCreateWindow(cs);
+	//return CView::PreCreateWindow(cs);
+	// AfxRegisterWndClass() 함수의 3번째 매개변수는 Background Brush 를 설정하는 
+	// 곳으로 NULL 로 설정하게 되면 프레임마다 화면이 지워지지 않는다. 즉, 화면이 깜박
+	// 거리는 현상 (Flicker 현상) 을 방지한다.
+	if (!CWnd::PreCreateWindow(cs))
+		return FALSE;
+
+	cs.dwExStyle |= WS_EX_CLIENTEDGE;
+	cs.style &= ~WS_BORDER;
+	cs.lpszClass = AfxRegisterWndClass(CS_HREDRAW | CS_VREDRAW | CS_DBLCLKS, ::LoadCursor(NULL, IDC_ARROW), NULL, NULL);
+	
+	return TRUE;
 }
 
 // CDentalTechnologistAssistView 그리기
+
+//void CDentalTechnologistAssistView::OnPaint()
+//{
+//	//CString strText = _T("TODO: implement thumbnail drawing here");
+//	//pDC->FillSolidRect(lprcBounds, RGB(255, 255, 255));
+//	//CRect rectClient;
+//	//GetClientRect(rectClient);
+//
+//	//pDC->DrawText(strText, rectClient, DT_CENTER | DT_WORDBREAK);
+//
+//	//CPaintDC dc(this); 코드는 삭제하지 말것. 삭제하게 되면 화면 갱신 시 창의 프레임 갱신이 느려지게 된다.
+//	CPaintDC dc(this);      // 삭제하면 안됨.
+//
+//	//mf_Preview->m_draw.TestDraw();
+//}
+
 
 void CDentalTechnologistAssistView::OnDraw(CDC* pDC)
 {
 	if(pDC == NULL) return;
 
 	CString strText = _T("TODO: implement thumbnail drawing here");
-	//pDC->FillSolidRect(lprcBounds, RGB(255, 255, 255));
+	////pDC->FillSolidRect(lprcBounds, RGB(255, 255, 255));
 	CRect rectClient;
 	GetClientRect(rectClient);
-	
+	//
 	pDC->DrawText(strText, rectClient, DT_CENTER | DT_WORDBREAK);
 
-	mf_Preview->m_draw.TestDraw();
-	//mf_Preview->OnReadSample()
+	//mf_Preview->m_draw.TestDraw();
+	//mf_Preview->OnReadSample();
 	//pDC->DrawText("dsadaeea", 8, &a, RGB(255, 0, 0));
 	//CDentalTechnologistAssistDoc* pDoc = GetDocument();
 	///ASSERT_VALID(pDoc);

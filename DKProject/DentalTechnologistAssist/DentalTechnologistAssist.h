@@ -24,6 +24,7 @@ public:
 public:
 	virtual BOOL InitInstance();
 	virtual int ExitInstance();
+	virtual BOOL OnIdle(LONG lCount);
 
 // 구현입니다.
 	UINT  m_nAppLook;

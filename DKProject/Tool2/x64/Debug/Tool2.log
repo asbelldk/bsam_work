@@ -1,15 +1,1 @@
-﻿  stdafx.cpp
-  VideoCapture.cpp
-d:\work\bsam_work\dkproject\tool2\videocapture.h(6): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
-  d:\work\bsam_work\dkproject\tool2\videocapture.h(6): note: 명령줄 인수: '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
-  Tool2View.cpp
-  Tool2Doc.cpp
-  Tool2.cpp
-d:\work\bsam_work\dkproject\tool2\videocapture.h(6): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
-  d:\work\bsam_work\dkproject\tool2\videocapture.h(6): note: 명령줄 인수: '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
-  program.cpp
-  MainFrm.cpp
-  ChildFrm.cpp
-  CaptureWindow.cpp
-  코드를 생성하고 있습니다...
-  Tool2.vcxproj -> D:\Work\bsam_work\DKProject\x64\Debug\Tool2.exe
+﻿

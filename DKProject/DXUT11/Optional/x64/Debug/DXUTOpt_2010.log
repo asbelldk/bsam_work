@@ -113,11 +113,11 @@ c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): w
 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
   C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
 DXUTgui.cpp(7235): warning C4458: 'iTexture' 선언은 클래스 멤버를 숨깁니다.
-  e:\bsamwork\dkproject\dxut11\optional\DXUTgui.h(111): note: 'CDXUTElement::iTexture' 선언을 참조하십시오.
+  e:\bsam_work\dkproject\dxut11\optional\DXUTgui.h(111): note: 'CDXUTElement::iTexture' 선언을 참조하십시오.
 DXUTgui.cpp(7249): warning C4458: 'iFont' 선언은 클래스 멤버를 숨깁니다.
-  e:\bsamwork\dkproject\dxut11\optional\DXUTgui.h(112): note: 'CDXUTElement::iFont' 선언을 참조하십시오.
+  e:\bsam_work\dkproject\dxut11\optional\DXUTgui.h(112): note: 'CDXUTElement::iFont' 선언을 참조하십시오.
 DXUTgui.cpp(7249): warning C4458: 'dwTextFormat' 선언은 클래스 멤버를 숨깁니다.
-  e:\bsamwork\dkproject\dxut11\optional\DXUTgui.h(113): note: 'CDXUTElement::dwTextFormat' 선언을 참조하십시오.
+  e:\bsam_work\dkproject\dxut11\optional\DXUTgui.h(113): note: 'CDXUTElement::dwTextFormat' 선언을 참조하십시오.
   DXUTguiIME.cpp
 c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': 매크로 재정의
   C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092): note: 'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
@@ -591,4 +591,4 @@ c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): w
 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
   C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
   코드를 생성하고 있습니다...
-  DXUTOpt_2010.vcxproj -> E:\BsamWork\DKProject\x64\Debug\DXUTOpt.lib
+  DXUTOpt_2010.vcxproj -> E:\bsam_work\DKProject\x64\Debug\DXUTOpt.lib
